@@ -2,11 +2,11 @@ import java.util.*;
 
 public class MainProgram {
     //inkapsling
-    private final String p = "palm";
-    private final String kv = "köttätande växt";
-    private final String ka = "kaktus";
-    private String ask = "Vilken växt ska få vätska?";
-    private Boolean continueAsking = true;
+    final String p = "palm";
+    final String kv = "köttätande växt";
+    final String ka = "kaktus";
+    final String ask = "Vilken växt ska få vätska?";
+    Boolean continueAsking = true;
 
     Scanner input = new Scanner(System.in);
 
