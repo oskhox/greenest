@@ -12,6 +12,15 @@ public class MainProgram {
 
     //konstruktor som tillsammans med main-metoden bryter den statiska kontexten
     public MainProgram() {
+
+        //enbart för test, att den skriver ut objekten korrekt
+        Palm laura = new Palm("Palm", "Laura", "vatten", "liter", 1);
+        System.out.println(laura);
+        CarnPlant sven = new CarnPlant("Köttätande växt", "Sven", "mineraldryck", "cl", 3);
+        System.out.println(sven);
+        Cactus nisse = new Cactus("Kaktus", "Nisse", "vatten", "dl", 2);
+        System.out.println(nisse);
+
         //while loop, terminalapp som fortsätter fråga
         while (continueAsking) {
             System.out.println(ask);
@@ -54,30 +63,13 @@ public class MainProgram {
     }
 }
 
-//ARV:
-//separat fil med superklass växter. Superklass variabel växtnamn (tom standard), incheckad (ja standard)
-//variabler görs till private och skriv kommentar att inkapslad
-//superkonstruktor med växtnamn och incheckad. Getter och setters (se sen om någon blir grå), motivera getters och setters som inkapsling
-//superklass-metod toString (växtnamn, incheckad) som alltid kommer skrivas över av subklassernas toString
-//(men testa även denna enskilt)
-
-//separata filer med subklasser kaktus, palm, köttätande växt. (Polymorfism genom arvet enbart dvs subklass-metoder)
-//variabler namn, växttyp vätsketyp, (arv) int mängd = 0 (interface)
-//skriv även här att variabler är private och kommentar att inkapslad
-//konstruktor och getter och setters (se sen om någon blir grå), motivera getters och setters som inkapsling
-//subkonstruktorn anropar superklassens konstruktor, nämn på redovisning oavsett
-//(behövs inga getters och setters för variablerna i superklassen då de ärvs)
-//subklassmetod toString i var och en som sedan kommenteras som polymorfism genom arv, bara denna skriver ut allt - ingen hårdkodning
-
-//sen switch-case som matchar och i sin tur skapar objekt av respektive subklass. Få in enums sen här
-
 //INTERFACE:
 //en interface metod som beräknar mängden vätska som sen implementeras olika i alla instansieringar av interfacet. Hade kunnat vara i subklass med.
-
-//HÅRDKODNING:
-//tänk verkligen på ingen hårdkodning utifrån en bred definition, både namnet + utskrift i toString. Gör om.
+//sen switch-case som matchar och i sin tur skapar objekt av respektive subklass. Få in enums sen här.
 
 //ENUMS:
-//gör enums i egen fil och bygg in när allt annat är klart, med switch-case
+//gör enums i egen fil och bygg in i switch-case
 
+//HÅRDKODNING:
+//rensa på hårdkodning utifrån en bred definition, både namnet + utskrift i toString. Gör om. Alla strängar och siffror ska lagras i variabler, gör om brett,
 
