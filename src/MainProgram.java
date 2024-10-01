@@ -18,7 +18,7 @@ public class MainProgram {
         System.out.println(laura);
         CarnPlant sven = new CarnPlant("Köttätande växt", "Sven", "mineraldryck", "cl", 3);
         System.out.println(sven);
-        Cactus nisse = new Cactus("Kaktus", "Nisse", "vatten", "dl", 2);
+        Cactus nisse = new Cactus("Kaktus", "Nisse", "näringsvätska", "dl", 2);
         System.out.println(nisse);
 
         //while loop, terminalapp som fortsätter fråga
@@ -65,13 +65,14 @@ public class MainProgram {
 
 //INTERFACE:
 //en interface metod som beräknar mängden vätska som sen implementeras olika i alla instansieringar av interfacet. Hade kunnat vara i subklass med.
-//sen switch-case som matchar och i sin tur skapar objekt av respektive subklass. Få in enums sen här.
 
 //ENUMS:
 //gör enums i egen fil och bygg in i switch-case
 
+//sen switch-case som matchar och i sin tur skapar objekt av respektive subklass. Få in enums här.
+
 //HÅRDKODNING:
-//rensa på hårdkodning utifrån en bred definition, både namnet + utskrift i toString. Gör om. Alla strängar och siffror ska lagras i variabler, gör om brett
+//rensa på hårdkodning utifrån en bred definition, både namnet + utskrift i toString. Gör om. ALLA strängar och siffror ska lagras i variabler, gör om brett
 
 //rensa upp i getters och setters som inte används
 
