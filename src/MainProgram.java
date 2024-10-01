@@ -71,5 +71,7 @@ public class MainProgram {
 //gör enums i egen fil och bygg in i switch-case
 
 //HÅRDKODNING:
-//rensa på hårdkodning utifrån en bred definition, både namnet + utskrift i toString. Gör om. Alla strängar och siffror ska lagras i variabler, gör om brett,
+//rensa på hårdkodning utifrån en bred definition, både namnet + utskrift i toString. Gör om. Alla strängar och siffror ska lagras i variabler, gör om brett
+
+//rensa upp i getters och setters som inte används
 
