@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class MainProgram {
-    //inkapsling
-    final String ask = "Vilken växt ska få vätska?";
     Boolean continueAsking = true;
 
     //Växter som bor på hotellet
@@ -17,7 +15,7 @@ public class MainProgram {
 
         //while loop, terminalapp som fortsätter fråga
         while (continueAsking) {
-            System.out.println(ask);
+            System.out.println("Vilken växt ska få vätska?");
             String userInput = (input.nextLine().toLowerCase());
 
             if (!checkInput(userInput)) {
