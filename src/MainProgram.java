@@ -6,7 +6,6 @@ public class MainProgram {
     public MainProgram() {
         Scanner input = new Scanner(System.in);
 
-
         Cactus igge = new Cactus("kaktus", "Igge");
         Palm laura = new Palm("palm", "Laura", 5.0);
         CarnPlant meatloaf = new CarnPlant("köttätande växt", "Meatloaf", 0.7);
