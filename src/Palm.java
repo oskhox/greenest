@@ -4,8 +4,10 @@ public class Palm extends Plants implements Calculate {
     private final double height;
     //inkapslade konstanter med default-värden
     private static final double DEFAULT_AMOUNT_LIQUID_PER_METER = 0.5;
-    private static final String LIQUID_TYPE = "vatten";
     private static final String LIQUID_MEASUREMENT = "liter";
+    //inkapslad konstant som hämtar typ av vätska från enum
+    private static final LiquidType liquid = LiquidType.WATER;
+
 
     public Palm(String plantType, String plantName, double height) {
         super(plantType);
@@ -26,8 +28,8 @@ public class Palm extends Plants implements Calculate {
         return DEFAULT_AMOUNT_LIQUID_PER_METER;
     }
 
-    public String getLiquidType() {
-        return LIQUID_TYPE;
+    public LiquidType getLiquidType() {
+        return liquid;
     }
 
     public String getLiquidMeasurement() {
@@ -47,7 +49,7 @@ public class Palm extends Plants implements Calculate {
         return "Växten är en " + super.getPlantType() +
                 " som heter " + getPlantName() + ". " +
                 "Den ska vattnas med " + calculateLiquid() + " " +
-                getLiquidMeasurement() + " " + getLiquidType() + " per dag.";
+                getLiquidMeasurement() + " " + getLiquidType().getLiquid() + " per dag.";
     }
 
 }

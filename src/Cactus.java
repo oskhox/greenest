@@ -3,8 +3,9 @@ public class Cactus extends Plants {
     private final String plantName;
     //inkapslade konstanter med default-värden
     private static final int DEFAULT_AMOUNT_LIQUID = 2;
-    private static final String LIQUID_TYPE = "mineralvatten";
     private static final String LIQUID_MEASUREMENT = "cl";
+    //inkapslad konstant som hämtar typ av vätska från enum
+    private static final LiquidType liquid = LiquidType.MINERAL_WATER;
 
     public Cactus(String plantType, String plantName) {
         super(plantType);
@@ -16,8 +17,8 @@ public class Cactus extends Plants {
         return plantName;
     }
 
-    public String getLiquidType() {
-        return LIQUID_TYPE;
+    public LiquidType getLiquidType() {
+        return liquid;
     }
 
     public int getAmountLiquid() {
@@ -34,6 +35,6 @@ public class Cactus extends Plants {
         return "Växten är en " + super.getPlantType() +
                 " som heter " + getPlantName() + ". " +
                 "Den ska vattnas med " + getAmountLiquid() + " " +
-                getLiquidMeasurement() + " " + getLiquidType() + " per dag.";
+                getLiquidMeasurement() + " " + getLiquidType().getLiquid() + " per dag.";
     }
 }

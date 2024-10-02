@@ -5,10 +5,11 @@ public class CarnPlant extends Plants implements Calculate {
     //inkapslade konstanter med default-värden
     private static final double DEFAULT_AMOUNT_LIQUID_PER_DAY = 0.1;
     private static final double DEFAULT_AMOUNT_LIQUID_PER_METER = 0.2;
-    private static final String LIQUID_TYPE = "proteindryck";
     private static final String LIQUID_MEASUREMENT = "liter";
+    //inkapslad konstant som hämtar typ av vätska från enum
+    private static final LiquidType liquid = LiquidType.PROTEIN_DRINK;
 
-    public CarnPlant (String plantType, String plantName, double height) {
+    public CarnPlant(String plantType, String plantName, double height) {
         super(plantType);
         this.plantName = plantName;
         this.height = height;
@@ -31,8 +32,8 @@ public class CarnPlant extends Plants implements Calculate {
         return DEFAULT_AMOUNT_LIQUID_PER_METER;
     }
 
-    public String getLiquidType() {
-        return LIQUID_TYPE;
+    public LiquidType getLiquidType() {
+        return liquid;
     }
 
     public String getLiquidMeasurement() {
@@ -51,6 +52,6 @@ public class CarnPlant extends Plants implements Calculate {
         return "Växten är en " + super.getPlantType() +
                 " som heter " + getPlantName() + ". " +
                 "Den ska vattnas med " + calculateLiquid() + " " +
-                getLiquidMeasurement() + " " + getLiquidType() + " per dag.";
+                getLiquidMeasurement() + " " + getLiquidType().getLiquid() + " per dag.";
     }
 }
