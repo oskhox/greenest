@@ -8,7 +8,6 @@ public class Palm extends Plants implements Calculate {
     //inkapslad konstant som hämtar typ av vätska från enum
     private static final LiquidType liquid = LiquidType.WATER;
 
-
     public Palm(String plantType, String plantName, double height) {
         super(plantType);
         this.plantName = plantName;
@@ -51,5 +50,4 @@ public class Palm extends Plants implements Calculate {
                 "Den ska vattnas med " + calculateLiquid() + " " +
                 getLiquidMeasurement() + " " + getLiquidType().getLiquid() + " per dag.";
     }
-
 }
