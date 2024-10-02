@@ -35,7 +35,6 @@ public class Palm extends Plants implements Calculate {
         return LIQUID_MEASUREMENT;
     }
 
-
     //implementerar interface Calculate
     @Override
     public double calculateLiquid() {

@@ -16,7 +16,7 @@ public class MainProgram {
             String userInput = (input.nextLine().toLowerCase());
 
             if (!checkInput(userInput)) {
-                continue; //om ogiltig, hoppas till nästa iteration av loopen, annars fortsätter till switch case
+                continue; //om tom, hoppas till nästa iteration av loopen, annars fortsätter till switch case
             }
 
             switch (userInput) {
