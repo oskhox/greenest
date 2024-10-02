@@ -13,7 +13,7 @@ public class MainProgram {
         Palm olof = new Palm("palm", "Olof", 1.0);
 
         while (continueAsking) {
-            System.out.println("Vilken växt ska få vätska?");
+            System.out.println("Vad är namnet på växten som ska vattnas?");
             String userInput = (input.nextLine().toLowerCase());
 
             if (!checkInput(userInput)) {
