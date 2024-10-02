@@ -1,5 +1,5 @@
 public class Plants {
-    //inkapslade konstant utan default-värden
+    //inkapslad konstant
     private final String plantType;
 
     public Plants(String plantType) {
@@ -11,7 +11,6 @@ public class Plants {
         return plantType;
     }
 
-    //superklassens toString-metod som alltid överskuggas av subklasserna
     @Override
     public String toString() {
         return "Växten är av typen " + plantType + ".";

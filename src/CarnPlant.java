@@ -1,5 +1,5 @@
 public class CarnPlant extends Plants implements Calculate {
-    //inkapslade konstanter utan default-värden
+    //inkapslade konstanter
     private final String plantName;
     private final double height;
     //inkapslade konstanter med default-värden
@@ -46,7 +46,7 @@ public class CarnPlant extends Plants implements Calculate {
         return getDefaultAmountLiquidPerMeter() * getHeight() + getDefaultAmountLiquidPerDay();
     }
 
-    //toString-metod i subklassen som metodöverskuggar superklassens toString-metod vilket är polymorfism genom arv
+    //toString-metod i subklassen som vid användning är polymorfism genom arv
     @Override
     public String toString() {
         return "Växten är en " + super.getPlantType() +

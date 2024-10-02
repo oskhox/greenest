@@ -1,5 +1,5 @@
 public class Palm extends Plants implements Calculate {
-    //inkapslade konstanter utan default-värden
+    //inkapslad konstant
     private final String plantName;
     private final double height;
     //inkapslade konstanter med default-värden
@@ -43,7 +43,7 @@ public class Palm extends Plants implements Calculate {
         return getDefaultAmountLiquidPerMeter() * getHeight();
     }
 
-    //toString-metod i subklassen som metodöverskuggar superklassens toString-metod vilket är polymorfism genom arv
+    //toString-metod i subklassen som vid användning är polymorfism genom arv
     @Override
     public String toString() {
         return "Växten är en " + super.getPlantType() +

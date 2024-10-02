@@ -1,15 +1,16 @@
 import java.util.*;
 
 public class MainProgram {
-    Boolean continueAsking = true;
+    boolean continueAsking = true;
 
     public MainProgram() {
         Scanner input = new Scanner(System.in);
 
-        Cactus igge = new Cactus("Kaktus", "Igge");
-        Palm laura = new Palm("Palm", "Laura", 5.0);
-        CarnPlant meatloaf = new CarnPlant("Köttätande växt", "Meatloaf", 0.7);
-        Palm olof = new Palm("Palm", "Olof", 1.0);
+
+        Cactus igge = new Cactus("kaktus", "Igge");
+        Palm laura = new Palm("palm", "Laura", 5.0);
+        CarnPlant meatloaf = new CarnPlant("köttätande växt", "Meatloaf", 0.7);
+        Palm olof = new Palm("palm", "Olof", 1.0);
 
         while (continueAsking) {
             System.out.println("Vilken växt ska få vätska?");
@@ -19,7 +20,7 @@ public class MainProgram {
                 continue; //om ogiltig, hoppas till nästa iteration av loopen, annars fortsätter till switch case
             }
 
-            switch (userInput) { //fast gör ej hårdkodad
+            switch (userInput) {
                 case "igge" -> {
                     System.out.println(igge);
                     continueAsking = false;
@@ -39,14 +40,15 @@ public class MainProgram {
                 default -> System.out.println("Det du skrev in matchade ingen växt. Pröva igen");
             }
         }
+        input.close();
     }
 
-    public static Boolean checkInput(String input) {
+    public static boolean checkInput(String input) {
         if (input.trim().isEmpty()) {
             System.out.println("Du skrev inte in något alls eller bara mellanslag. Pröva igen.");
             return false;
-        } else
-            return true;
+        }
+        return true;
     }
 
     public static void main(String[] args) {

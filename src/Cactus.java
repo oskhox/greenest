@@ -1,5 +1,5 @@
 public class Cactus extends Plants {
-    //inkapslad konstant utan default-värden
+    //inkapslad konstant
     private final String plantName;
     //inkapslade konstanter med default-värden
     private static final int DEFAULT_AMOUNT_LIQUID = 2;
@@ -29,7 +29,7 @@ public class Cactus extends Plants {
         return LIQUID_MEASUREMENT;
     }
 
-    //toString-metod i subklassen som metodöverskuggar superklassens toString-metod vilket är polymorfism genom arv
+    //toString-metod i subklassen som vid användning är polymorfism genom arv
     @Override
     public String toString() {
         return "Växten är en " + super.getPlantType() +
