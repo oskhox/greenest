@@ -15,7 +15,7 @@ public class MainProgram {
             System.out.println("Vad är namnet på växten som du vill vattna?");
             String userInput = (input.nextLine().toLowerCase());
 
-            if (!checkInput(userInput)) {
+            if (!checkIfEmpty(userInput)) {
                 continue; //om tom, hoppas till nästa iteration av loopen, annars fortsätter till switch case
             }
 
@@ -42,7 +42,7 @@ public class MainProgram {
         input.close();
     }
 
-    public static boolean checkInput(String input) {
+    public static boolean checkIfEmpty(String input) {
         if (input.trim().isEmpty()) {
             System.out.println("Du skrev inte in något alls eller bara mellanslag. Pröva igen.");
             return false;
