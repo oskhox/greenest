@@ -1,15 +1,16 @@
-public class Palm extends Plants {
+public class Palm extends Plants implements Calculate {
+    //inkapslade konstanter utan default-värden
+    private final String plantName;
+    private final double height;
+    //inkapslade konstanter med default-värden
+    private static final double DEFAULT_AMOUNT_LIQUID_PER_METER = 0.5;
+    private static final String LIQUID_TYPE = "vatten";
+    private static final String LIQUID_MEASUREMENT = "liter";
 
-    //inkapslade variabler
-    private String plantName, liquidType, liquidMeasurement;
-    private int amountLiquid; //till interface sen, inte arv
-
-    public Palm(String plantType, String plantName, String liquidType, String liquidMeasurement, int amountLiquid) {
+    public Palm(String plantType, String plantName, double height) {
         super(plantType);
         this.plantName = plantName;
-        this.liquidType = liquidType;
-        this.liquidMeasurement = liquidMeasurement;
-        this.amountLiquid = amountLiquid;
+        this.height = height;
     }
 
     //getters och setters bidrar till inkapsling
@@ -17,43 +18,31 @@ public class Palm extends Plants {
         return plantName;
     }
 
-    @Override
-    public void setPlantName(String plantName) {
-        this.plantName = plantName;
+    public double getHeight() {
+        return height;
     }
 
     public String getLiquidType() {
-        return liquidType;
-    }
-
-    public void setLiquidType(String liquidType) {
-        this.liquidType = liquidType;
+        return LIQUID_TYPE;
     }
 
     public String getLiquidMeasurement() {
-        return liquidMeasurement;
+        return LIQUID_MEASUREMENT;
     }
 
-    public void setLiquidMeasurement(String liquidMeasurement) {
-        this.liquidMeasurement = liquidMeasurement;
-    }
-
-    //till interfacet, inte arvet
-    public int getAmountLiquid() {
-        return amountLiquid;
-    }
-
-    public void setAmountLiquid(int amountLiquid) {
-        this.amountLiquid = amountLiquid;
+    //implementerar interface Calculate
+    @Override
+    public double calculateLiquid() {
+        return DEFAULT_AMOUNT_LIQUID_PER_METER * getHeight();
     }
 
     //toString-metod i subklassen som metodöverskuggar superklassens toString-metod vilket är polymorfism genom arv
-    //lägg till så att även skriver ut interfacet
     @Override
     public String toString() {
         return "Växten är en " + super.getPlantType() +
                 " som heter " + getPlantName() + ". " +
-                "Den ska vattnas med " + amountLiquid + " " +
-                liquidMeasurement + " " + liquidType + ".";
+                "Den ska vattnas med " + calculateLiquid() + " " +
+                getLiquidMeasurement() + " " + getLiquidType() + " per dag.";
     }
+
 }

@@ -1,15 +1,14 @@
 public class Cactus extends Plants {
+    //inkapslad konstant utan default-värden
+    private final String plantName;
+    //inkapslade konstanter med default-värden
+    private static final int DEFAULT_AMOUNT_LIQUID = 2;
+    private static final String LIQUID_TYPE = "mineralvatten";
+    private static final String LIQUID_MEASUREMENT = "cl";
 
-    //inkapslade variabler
-    private String plantName, liquidType, liquidMeasurement;
-    private int amountLiquid; //till interface sen, inte arv
-
-    public Cactus(String plantType, String plantName, String liquidType, String liquidMeasurement, int amountLiquid) {
+    public Cactus(String plantType, String plantName) {
         super(plantType);
         this.plantName = plantName;
-        this.liquidType = liquidType;
-        this.liquidMeasurement = liquidMeasurement;
-        this.amountLiquid = amountLiquid;
     }
 
     //getters och setters bidrar till inkapsling
@@ -17,44 +16,24 @@ public class Cactus extends Plants {
         return plantName;
     }
 
-    @Override
-    public void setPlantName(String plantName) {
-        this.plantName = plantName;
-    }
-
     public String getLiquidType() {
-        return liquidType;
+        return LIQUID_TYPE;
     }
 
-    public void setLiquidType(String liquidType) {
-        this.liquidType = liquidType;
+    public int getAmountLiquid() {
+        return DEFAULT_AMOUNT_LIQUID;
     }
 
     public String getLiquidMeasurement() {
-        return liquidMeasurement;
-    }
-
-    public void setLiquidMeasurement(String liquidMeasurement) {
-        this.liquidMeasurement = liquidMeasurement;
-    }
-
-    //till interfacet, inte arvet
-    public int getAmountLiquid() {
-        return amountLiquid;
-    }
-
-    public void setAmountLiquid(int amountLiquid) {
-        this.amountLiquid = amountLiquid;
+        return LIQUID_MEASUREMENT;
     }
 
     //toString-metod i subklassen som metodöverskuggar superklassens toString-metod vilket är polymorfism genom arv
-    //lägg till så att även skriver ut interfacet
     @Override
     public String toString() {
         return "Växten är en " + super.getPlantType() +
                 " som heter " + getPlantName() + ". " +
-                "Den ska vattnas med " + amountLiquid + " " +
-                liquidMeasurement + " " + liquidType + ".";
+                "Den ska vattnas med " + getAmountLiquid() + " " +
+                getLiquidMeasurement() + " " + getLiquidType() + " per dag.";
     }
 }
-

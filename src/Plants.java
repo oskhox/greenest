@@ -1,6 +1,6 @@
 public class Plants {
-    //inkapslade variabler
-    private String plantType;
+    //inkapslade konstant utan default-värden
+    private final String plantType;
 
     public Plants(String plantType) {
         this.plantType = plantType;
@@ -11,17 +11,9 @@ public class Plants {
         return plantType;
     }
 
-    public void setPlantName(String plantName) {
-        this.plantType = plantType;
-    }
-
-    //superklassens toString-metod som alltid skriv över av subklasserna
+    //superklassens toString-metod som alltid överskuggas av subklasserna
     @Override
     public String toString() {
-        return "Plants{" +
-                "plantType='" + plantType + '\'' +
-                '}';
+        return "Växten är av typen " + plantType + ".";
     }
 }
-
-//kolla om getter eller setter bli grå och ta i så fall bort
