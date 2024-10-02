@@ -13,13 +13,17 @@ public class Palm extends Plants implements Calculate {
         this.height = height;
     }
 
-    //getters och setters bidrar till inkapsling
+    //getters bidrar till inkapsling
     public String getPlantName() {
         return plantName;
     }
 
     public double getHeight() {
         return height;
+    }
+
+    public double getDefaultAmountLiquidPerMeter() {
+        return DEFAULT_AMOUNT_LIQUID_PER_METER;
     }
 
     public String getLiquidType() {
@@ -30,10 +34,11 @@ public class Palm extends Plants implements Calculate {
         return LIQUID_MEASUREMENT;
     }
 
+
     //implementerar interface Calculate
     @Override
     public double calculateLiquid() {
-        return DEFAULT_AMOUNT_LIQUID_PER_METER * getHeight();
+        return getDefaultAmountLiquidPerMeter() * getHeight();
     }
 
     //toString-metod i subklassen som metodöverskuggar superklassens toString-metod vilket är polymorfism genom arv

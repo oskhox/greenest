@@ -6,7 +6,7 @@ public class Plants {
         this.plantType = plantType;
     }
 
-    //getters och setters bidrar till inkapsling
+    //getter bidrar till inkapsling
     public String getPlantType() {
         return plantType;
     }
