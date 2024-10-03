@@ -3,6 +3,7 @@ public enum LiquidType {
     MINERAL_WATER("mineralvatten"),
     PROTEIN_DRINK("proteindryck");
 
+    //inkapsling
     private final String liquid;
 
     LiquidType(String liquid) {

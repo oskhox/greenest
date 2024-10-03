@@ -1,9 +1,11 @@
 public class Plants {
-    //inkapslad konstant
+    //inkapsling
     private final String plantType;
+    private final String plantName;
 
-    public Plants(String plantType) {
+    public Plants(String plantType, String plantName) {
         this.plantType = plantType;
+        this.plantName = plantName;
     }
 
     //getter bidrar till inkapsling
@@ -11,8 +13,12 @@ public class Plants {
         return plantType;
     }
 
+    public String getPlantName() {
+        return plantName;
+    }
+
     @Override
     public String toString() {
-        return "Växten är av typen " + plantType + ".";
+        return "Växten " + getPlantType() + " är av typen " + getPlantType() + ".";
     }
 }

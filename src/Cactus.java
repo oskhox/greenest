@@ -1,22 +1,14 @@
 public class Cactus extends Plants {
-    //inkapslad konstant
-    private final String plantName;
-    //inkapslade konstanter med default-värden
+    //inkapsling
     private static final int DEFAULT_AMOUNT_LIQUID = 2;
-    private static final String LIQUID_MEASUREMENT = "cl";
-    //inkapslad konstant som hämtar typ av vätska från enum
+    private static final String DEFAULT_LIQUID_MEASUREMENT = "cl";
     private static final LiquidType liquid = LiquidType.MINERAL_WATER;
 
     public Cactus(String plantType, String plantName) {
-        super(plantType);
-        this.plantName = plantName;
+        super(plantType, plantName);
     }
 
-    //getters och setters bidrar till inkapsling
-    public String getPlantName() {
-        return plantName;
-    }
-
+    //getters bidrar till inkapsling
     public LiquidType getLiquidType() {
         return liquid;
     }
@@ -26,14 +18,14 @@ public class Cactus extends Plants {
     }
 
     public String getLiquidMeasurement() {
-        return LIQUID_MEASUREMENT;
+        return DEFAULT_LIQUID_MEASUREMENT;
     }
 
     //toString-metod i subklassen som vid användning är polymorfism genom arv
     @Override
     public String toString() {
         return "Växten är en " + super.getPlantType() +
-                " som heter " + getPlantName() + ". " +
+                " som heter " + super.getPlantName() + ". " +
                 "Den ska vattnas med " + getAmountLiquid() + " " +
                 getLiquidMeasurement() + " " + getLiquidType().getLiquid() + " per dag.";
     }
