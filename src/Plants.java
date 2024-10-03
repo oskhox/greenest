@@ -1,4 +1,4 @@
-public class Plants {
+public abstract class Plants {
     //inkapsling
     private final String plantType;
     private final String plantName;
